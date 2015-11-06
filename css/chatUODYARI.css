@@ -1,0 +1,62 @@
+div.content-left {
+	width: 300px;
+	padding-left: 10px;
+}
+div.content-left div.chats {
+	width: 300px;
+}
+div.content-right {
+	width: 630px;
+	padding-right: 10px;
+}
+div.content-right .chat {
+	width: 630px;
+	height: 438px;
+	border-radius: 4px 4px 0px 0px;
+}
+div.content-left div.chatitem {
+	padding: 4px 0px 4px 10px;
+	width: 100%;
+	cursor: pointer;
+}
+div.content-left div.chatitem:hover {
+	background-color: rgb(191, 232, 252);
+}
+div.chat div.content {
+	height: 386px!important;
+}
+
+div.verzender {
+	background-color: rgb(63, 172, 226);
+	color: white;
+	max-width: 460px;
+	padding: 10px 20px 10px 20px;
+	margin: 5px 10px 5px 340px;
+	float: right;
+	white-space: pre-line;
+	text-align: right;
+}
+div.ontvanger {
+	background-color: rgb(186, 232, 255);
+	max-width: 460px;
+	padding: 10px 20px 10px 20px;
+	float: left;
+	margin: 5px 340px 5px 10px;
+	white-space: pre-line;
+}
+div.message {
+	background-color: white;
+	padding: 0px 0px 0px 0px;
+	border-radius: 0px;
+	width: 630px;
+	border-top: none;
+}
+div.message textarea#message{
+	max-height: 61px;
+	width: 622px;
+	max-width: 622px;
+	font-family: helvetica;
+	outline: none;
+	height: 61px;
+	border: none;
+}

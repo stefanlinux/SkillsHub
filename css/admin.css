@@ -1,0 +1,62 @@
+div.admin-item a {
+	border-radius: 4px;
+	height: 51px;
+	border: 1px solid #B9B9B9;
+	background-color: #F6F7F8;
+	font-size: 20px;
+	text-decoration: none;
+	padding: 10px 0px 10px 10px;
+	font-family: Myriad Pro Regular;
+	width: 290px;
+	margin-bottom: 4px;
+	display: block;
+	position: relative;
+}
+
+div.admin-item a:hover, div.admin-selected a {
+	border: 1px solid #B9B9B9;
+	background-color: #3FACE2;
+}
+div.admin-selected a {
+	border: 1px solid #3FACE2;
+}
+
+div.admin-item  img {
+    float: left;
+}
+div.admin-item  a p {
+    margin: 0px 0px 0px 40px;
+    position: absolute;
+    line-height: 30px;
+    color: #2489BB;
+}
+div.admin-item a:hover p, div.admin-selected a p {
+	color: #F6F7F8 !important;
+}
+
+div div.listitem3 p {
+    margin: 5px 0px 0px 12px !important;
+}
+
+.listitem2 a.edit {
+    display: none;
+    margin: -18px 17px 0px -9px !important;
+    background-color: #FFF;
+    border-radius: 4px;
+    padding: 2px 6px 4px !important;
+    border: 1px solid #D3D3D3;
+    opacity: 0.75;
+}
+
+div.content div.projectlist {
+	height: 505px;
+}
+
+div.content div.skillslist {
+	height: 500px;
+	padding-bottom: 50px;
+}
+
+div.content div.projectlist div.content  {
+	height: 450px;
+}

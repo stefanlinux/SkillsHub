@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /SkillsHub/
+RewriteRule ^profiel/([^/]+)/?$ profiel.php?u=$1 [L]
+RewriteRule ^opdrachtgever/([^/]+)/?$ opdrachtgever.php?u=$1 [L]
+RewriteRule ^project/([^/]+)/?$ project.php?n=$1 [L]
+
+RewriteRule ^profielbewerken/([^/]+)/?$ profielbewerken.php?u=$1 [L]
+RewriteRule ^profielbewerkenadmin/([^/]+)/?$ profielbewerkenadmin.php?u=$1 [L]
+RewriteRule ^uitnodigen/([^/]+)/?$ uitnodigen.php?p=$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+</IfModule>

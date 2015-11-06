@@ -1,0 +1,1199 @@
+html { overflow: -moz-scrollbars-vertical; overflow-x: auto; overflow-y: scroll; } 
+
+body {
+	background-color: #e9eaed;
+	color: rgb(54, 54, 54);
+	font-family: "Myriad Pro Regular";
+	margin-top: 0;
+	margin-left: 0;
+	margin-right: 0;
+        
+}
+
+/* Shadow  */
+.shadow {
+	border: 1px rgb(185, 185, 185) solid;
+	border-radius: 4px;
+	/*box-shadow: 1px 1px 6px rgb(97, 97, 97);*/
+}
+.radius {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.radius2 {
+	border-radius: 4px;
+}
+.content {
+	width: 960px;
+	margin: 0px auto;
+	clear: both;
+}
+.content-left {
+	width: 270px;
+	float: left;
+        color:black;
+        font-size:16px;
+}
+.content-right {
+	float: right;
+	width: 300px;
+       
+}
+.rechts-uitlijnen{
+    display:inline;
+    
+    float:right;
+}
+
+div.content div.profielinfo {
+	width: 650px;
+	margin: 0px 20px 20px 0px;
+	background-color: white;
+	float: left;
+	font-size: 15px;
+	font-weight: 100;
+}
+div.content div.profielinfo a {
+	color: rgb(53, 52, 52);
+	text-decoration: none;
+}
+
+div.content div.profielinfo a:hover {
+	text-decoration: underline;
+}
+div.content div.profielinfo .block {
+	float: left;
+	margin-right: 30px;
+	width: auto;
+}
+div.content div.profielinfo h3,
+div.content div.projectcontent h3 {
+	font-weight: 100;
+	line-height: 0px;
+	font-size: 15px;
+	color: rgb(38, 131, 177);
+	margin: 5px 0px 15px 0px;
+}
+div.content div.profielinfo h5 {
+	font-weight: 100;
+	line-height: 0px;
+	font-size: 22px;
+	color: rgb(70, 70, 70);
+	padding: 0px;
+	margin: 10px 0px 14px 0px;
+}
+div.content div.profielinfo div.profielinfo {
+	width: 393px;
+	margin: 0px 10px 20px 10px;
+	float: left;
+}
+div.content div.profielinfo div.extrainfo {
+	width: 616px;
+	border-top: 1px rgb(185, 185, 185) solid;	 
+	margin-left: 16px;
+	margin-top: 11px;
+	float: left;
+	font-size: 15px;
+	font-weight: 100;
+	color: rgb(94, 94, 94);
+	padding: 11px 14px 15px 0px;
+}
+div.content div.skillslist,
+div.content div.projectlist,
+div.content div.peoplelist,
+div.content div.request,
+div.content div.list {
+	height: 310px;
+	width: 650px;
+	float: left;
+	margin: 0px 0px 20px 0px;
+	background-color: white;
+}
+div.content div.buissness {
+	width: 262px;
+	height: 310px;
+	float: left;
+	margin: 0px 10px 20px 10px;
+	background-color: white;
+}
+div.content div.buissness img {
+	height: 180px !important;
+	width: 180px !important;
+}
+div.content div.editprofile,
+div.content div.opdrachten {
+	width: 100%;
+	height: auto;
+	float: left;
+	margin: 0px 0px 20px 0px;
+	background-color: white;
+}
+div.content div.paddingtop {
+	padding-top: 42px;
+}
+div.content div.editprofile .content,
+div.content div.opdrachten .content {
+	padding: 20px 20px 0px 20px;
+	width: 900px;
+	border-radius: 4px;
+}
+div.content div.opdrachten .content {
+	min-height: 500px;
+	width: 100%;
+	padding: 0px 0px 0px 0px;
+}
+div.content div.opdrachten .fixed {
+	position: fixed;
+	margin: -205px 0px 0px -1px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom: 1px rgb(185, 185, 185) solid;
+	border-left: 1px rgb(185, 185, 185) solid;
+	border-right: 1px rgb(185, 185, 185) solid;
+	background-color: white;
+	opacity: 0.9;
+	z-index: 999;
+	width: 960px;
+	padding-right: 75px;
+	padding-left: 75px;
+	border-radius: 0px;
+}
+div.content div.opdrachten .fixed img,
+div.content div.opdrachten .fixed p {
+	display: none;
+}
+div.content div.editprofile .content .profielpic {
+	float: none;
+}
+div.content div.skillslist2 {
+	width: 100%;
+	height: 435px;
+}
+div.content div.search {
+	height: 127px;
+	width: 100%;
+	float: left;
+	margin: 0px;
+	background-color: white;
+}
+
+div.content div div.title {
+	height: 51px;
+	border-bottom: 1px rgb(185, 185, 185) solid;	
+	background-color: #f6f7f8;
+	font-size: 20px;
+	color: rgb(36, 137, 187);
+	padding: 10px 0px 10px 10px;
+	font-family: Myriad Pro Regular;
+}
+div.content div div.title p {
+	margin: 0px 0px 0px 10px;
+	position: relative;
+	line-height: 30px;
+	color: rgb(36, 137, 187);
+	width: auto;
+	float: left;
+}
+div.content div div.title img {
+	float: left;
+}
+div.people,
+div.requests,
+div.projectdetails {
+	width: 300px;
+	height: 500px;
+	background-color: white;
+	float: right;
+	margin-right: 0px;
+	margin-bottom: 20px;
+}
+div.projectdetails {
+    height:300px;
+}
+div.content div.people div.content,
+div.content div.projectlist div.content,
+div.content div.peoplelist div.content,
+div.content div.requests div.content,
+div.content div div.content {
+	overflow: auto;
+	overflow-x:hidden;
+	height: 88%;
+	width: 100%;
+}
+div.content div.projectlist div.content,
+div.content div.peoplelist div.content,
+div.content div.request div.content {
+	height: 252px;
+}
+div.content div.skillslist2 div.content {
+	height: 382px;
+}
+div.content div.search div.content {
+	height: 70px;
+}
+div.content div.searchresult {
+	background-color: white;
+	margin: 20px 0px 20px 0px;
+}
+
+div.content div.searchresult div.content {
+	height: 350px;
+}
+div.content div.people div.title {
+	margin-bottom: 0px;
+}
+div.content div.searchresult div.title {
+	margin: 0px 0px 0px 10px;
+	width: 900px;
+	height: 51px;
+	background-color: white;
+}
+
+div.content div.leerdoel {
+	overflow: hidden;
+	height: auto;
+	background-color: white;
+	padding-bottom: 10px;
+}
+div.content div.leerdoel div.title {
+	padding: 10px 0px 10px 10px;
+	width: 100%;
+	height: 51px;
+	background-color: white;
+}
+div.content div.leerdoel div.content {
+	width: 90%;
+	height: auto;
+	font-size: 15px;
+	font-weight: 100;
+	color: rgb(94, 94, 94);
+	white-space: pre-line;
+	overflow: initial;
+	margin: 0px 10px 0px;
+	padding: 0px 10px 6px;
+}
+div.content div.leerdoel div.title p {
+	color: rgb(136, 136, 136);
+	margin: 0px 0px 0px 0px;
+}
+a.edit {
+	float: right;
+	margin: -3px 11px 0px 0px;
+}
+a.edit2 {
+	float: right;
+	margin: 7px 11px 0px 0px;
+}
+a.edit3 {
+	float: right;
+	display: inline-block;
+	padding: 0px 11px 0px 11px;
+	margin-top: -10px;
+	color: rgb(136, 136, 136)!important;
+	line-height: 51px;
+	width: auto;
+	text-decoration: none;
+	font-size: 16px;
+	text-align: center;
+}
+a.edit3:hover {
+	color: #fff !important;
+	background-color: #3FACE2;
+}
+a.edit4 {
+	float: right;
+	margin: 0px 11px 0px 0px;
+}
+a.edit4:hover {
+	background-color: transparent;
+}
+.skillslist2 p.edit{
+	margin: -18px 17px 0px -9px!important;
+	color: rgb(102, 102, 102)!important;	
+}
+div div.listitem2 {
+	width: 100%;
+	padding-left: 9px;
+	padding-bottom: 18px;
+	padding-top: 7px;
+	transition: all 0.3s;
+}
+div div.listitem3 {
+	padding-left: 0px;
+	transition: all 0.3s;
+}
+div div.listitem4 {
+	padding-left: 9px;
+	width: 271px;
+}
+.whitesmoke {
+	background-color: whiteSmoke;
+}
+div div.listitem2:hover {
+	background-color: rgb(191, 232, 252);
+}
+
+div div.listitem2 a.edit {
+	display: none;
+	margin: -22px 17px 0px -9px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 4px;
+	padding: 2px 6px 4px 6px;
+	border: 1px solid 1px solid rgb(154, 208, 235);
+	color: rgb(46, 117, 153);
+	font-weight: normal;
+}
+div div.listitem2 p.edit {
+	display: none;
+	margin: -21px 17px 0px -9px;
+	border-radius: 4px;
+	padding: 2px 6px 4px 6px;
+	float: right;
+}
+div div.listitem2:hover a.edit {
+	display: block;
+}
+div div.listitem2:hover p.edit {
+	display: block;
+}
+
+div.people a,
+div.requests a,
+div.projectlist a,
+div.peoplelist a,
+div.request a {
+	text-decoration: none;
+	color: rgb(54, 54, 54);
+	font-family: Myriad Pro Regular;
+	font-size: 17px;
+}
+div div.listitem2 img {
+	height: 40px;
+	width: 40px;
+	margin-bottom: 7px;
+}
+div div.listitem2 p {
+	margin: -37px 0px 0px 52px;
+}
+div div.listitem3 p {
+	margin: 0px 0px 0px 12px;
+}
+
+div.skillslist div.one,
+div.skillslist div.two {
+	height: 245px;
+	width: 621px;
+	padding: 3px;
+	padding-left: 12px;
+	padding-top: 6px;
+	float: left;
+	overflow: auto;
+	overflow-x:hidden;
+} 
+div.divider {
+	width: 0px;
+	height: 230px;
+	margin-top: 15px;
+	margin: 15px 2px 0px 2px;
+	float: left; 
+	border-left: 1px solid rgb(185, 185, 185);
+}
+
+div.content a.profielpic {
+    position:relative;
+	padding: 6px 6px 1px 6px;
+	margin: 11px 10px 0px 10px;
+	float: left;
+}
+div.content a.profielpic img {
+	height: auto;
+	max-height: 220px!important;
+	width: 150px;
+}
+.profielpicc {
+	border-radius: 4px;
+}
+div.content div.projectnaam,
+div.content div.projectopdrachtgever,
+div.content div.projectstatus {
+	position: absolute;
+	margin: 106px 0px 0px 202px;
+	font-size: 39px;
+	color: white;
+	text-shadow: 0px 2px 14px black;
+	opacity: 0.9;
+}
+div.content div.projectopdrachtgever a {
+	font-size: 30px;
+	color: white;
+	text-shadow: 0px 2px 14px black;
+	opacity: 0.9;
+	text-decoration: none;	
+}
+div.content div.projectopdrachtgever {
+    margin: 11% 0px 0px 202px;
+    font-size: 34px;
+}
+div.content div.projectstatus {
+	margin: 340px 0px 0px 202px;
+	font-size: 17px;
+	background-color: white;
+	color: rgb(0, 74, 111);
+	padding: 0px 6px 2px 6px;
+	border: aliceblue;
+	border-radius: 4px;
+	opacity: 0.85;
+	box-shadow: 0px 0px 7px white;
+	text-shadow: none;
+}
+div.menucontent {
+	margin: auto auto;
+	max-width: 960px;
+}
+div.menucontent div.box {
+	display: none;
+	width: 334px;
+	height: 298px;
+	margin: -77px 0px 0px -18px;
+	position: absolute;
+	z-index: -1;
+}
+div.menu {
+	width: 100%;
+	background-color: #fff;
+	\\max-width: 960px;
+	margin: 0 auto;
+	padding: 22px 0;
+	text-align: center;
+	display:block;
+	float:left;
+}
+div.menu div.account {
+	height: 62px;
+	padding-left: 10px;
+	float: right;
+	margin-top: 0px;
+	margin-right: 11px;
+	text-align: left;
+	display: inline-block;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+div.menu div.account:hover {
+	background-color: #f6f7f8;
+}
+div.menu div.account div.pic {
+	height: 50px;
+	width: 50px;
+	margin: 5px 9px 0px 10px;
+	float: right;
+}
+div.menu div.account div.pic img {
+	height: 50px;
+	width: 50px;
+}
+div.menu div.account a {
+	float: right;
+	margin-top: 6px;
+	font-size: 19px; 
+	text-decoration: none;
+	color: rgb(114, 114, 114);	
+}
+div.menu div.account a.welkom {
+	text-align: right;
+	line-height: 24px;
+}	
+div.menu div.account .menuopties a {
+	float: none;
+	margin: none;
+}
+div.account:hover .menuopties,
+div.account:hover .box {
+	display: block !important;
+}
+.menuopties:hover {
+	opacity: 0.98 !important;
+}
+div.menu div.account div.menuopties {
+	position: absolute;
+	/* margin: 49px 0px 0px -100px; */
+	background-color: white;
+	opacity: 0.0;
+	width: 150px;
+	border-radius: 2px;
+	box-shadow: 0px 0px 4px rgb(122, 122, 122);
+	z-index: 99;
+	-webkit-transition: all 3.4s ease-in-out;
+	-moz-transition: all 3.2s ease-in-out;
+	-o-transition: all 3.2s ease-in-out;
+	transition: all 0.255s ease-in-out;
+	display: none;
+}
+div.menu div.account div.menuopties ul li a {
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	width: 100%;
+	font-size: 16px;
+	float: none;
+}
+div.menu div.account div.menuopties ul {
+	padding: 0px 0px 10px 0px;
+	margin: 0px 0px 0px 0px;
+}
+div.menu div.account div.menuopties li {
+	list-style: none;
+	padding: 3px 0px 3px 15px;
+	font-size: 16px;
+	color: rgb(109, 109, 109);
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+div.menu div.account div.menuopties li:hover {
+	background-color: rgb(243, 243, 243);
+}
+
+div.menu div.account div.menuopties div.seperator{
+	width: 95%;
+	margin-left: 2%;
+	display: inline-block;
+	margin: 5px 5px 5px 2%;
+	border-bottom: 1px rgb(185, 185, 185) solid;
+	font-size: 17px;
+	color: rgb(185, 185, 185);
+	text-indent:5px;
+	padding-bottom: 5px;
+}
+div.menu div.logout {
+	float: left;
+}
+div.menu div.logout a {
+	margin: 20px 0px 0px 8px;
+}
+div.nav {
+	width: 100%;
+	min-height: 35px;
+	display: block;
+	float: left;
+	background-color: rgb(63, 172, 226);
+	padding-top: 1px;
+	margin-bottom: 20px;
+	border-top: 1px solid rgb(38, 131, 177);
+	border-bottom: 1px solid rgb(38, 131, 177);
+}
+div.nav a {
+	float: left;
+	color: white;
+	text-decoration: none;
+	font-family: arial;
+	font-size: 17px;
+	margin: 0px;
+	padding: 7px 15px 7px 15px;
+	line-height: 18px;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+div.nav a:hover,
+div.nav a.selectedmenu {
+	background-color: rgb(88, 185, 233);
+}
+div.nav a.navadmin {
+	float: right;
+}
+
+/* Profielpagina */
+div.listitem {
+	height: 27px;
+	float: left;
+	margin: 4px;
+	padding: 3px 19px 1px 8px;
+	cursor: pointer;
+	color: #FFFFFF;
+	padding: 6px 19px 7px 10px;
+	height: auto !important;
+}
+div.noadmin {
+	padding: 6px 10px 7px 10px;	
+}
+
+div.lvl0, div.lvl0 .deleteitem, div.lvl1, div.lvl1 .deleteitem, div.lvl2, div.lvl2 .deleteitem {
+	color: #FFF;
+	white-space: nowrap;
+} 
+
+div.lvl0 {
+	background-color: #349602;
+	border: 1px solid #2A7404;
+}
+div.lvl1 {
+	background-color: #026596;
+	border: 1px solid #044F74;
+}
+div.lvl2 {
+	background-color: #960203;
+	border: 1px solid #740405;
+}
+
+div.listitem a {
+	font-size: 19px;
+	text-decoration: none;
+	color: black;
+}
+a.deleteitem {
+	position: static;
+	height: 48px;
+	width: 41px;
+	margin: -9px -19px 3px 8px;
+	padding: 5px 10px 7px 0px;
+	transition: all 0.5s;
+	font-weight: 200 !important;
+}
+
+div.lvl0 a.deleteitem:hover,
+div.lvl1 a.deleteitem:hover,
+div.lvl2 a.deleteitem:hover {
+	/*background-color: #74CAE9;*/
+	color: #FF0000 !important;
+}
+
+/*
+div.lvl1 a.deleteitem:hover {
+	background-color: #0a99ce;
+}
+div.lvl2 a.deleteitem:hover {
+	background-color: #33728A;
+}*/
+
+div.content div.list div.listitem:hover + div.content div.request div.listitem a.accepteren {
+	display: none;
+	text-decoration: none;
+}
+
+/* Form styles 
+
+.button {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
+	background:-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+	background-color:#ededed;
+	-webkit-border-top-left-radius:5px;
+	-moz-border-radius-topleft:5px;
+	border-top-left-radius:5px;
+	-webkit-border-top-right-radius:5px;
+	-moz-border-radius-topright:5px;
+	border-top-right-radius:5px;
+	-webkit-border-bottom-right-radius:5px;
+	-moz-border-radius-bottomright:5px;
+	border-bottom-right-radius:5px;
+	-webkit-border-bottom-left-radius:5px;
+	-moz-border-radius-bottomleft:5px;
+	border-bottom-left-radius:5px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#777777;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:50px;
+	line-height:50px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ffffff;
+}
+.button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) );
+	background:-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+	background-color:#dfdfdf;
+}
+.button:active {
+	position:relative;
+	top:1px;
+}
+*/
+
+.button {
+	padding: 8px 22px 8px 22px;
+	border: 1px solid rgb(38, 131, 177);
+	background-color: rgb(63, 172, 226);
+	border-radius: 4px;
+	font-size: 15px;
+	color: white;
+	float: right;
+	margin: 30px 50px 20px 0px;
+	text-decoration: none;
+	cursor: pointer;
+}
+.button2 {
+	margin:	180px 0px 0px 770px;
+	float: none;
+	position: absolute;
+}
+.textbox {
+	color:#bbbbbb; 
+	font-size:17px; 
+	font-family:Segoe UI; 
+	border:solid; 
+	border-width:thin; 
+	padding:3px 3px 3px 6px;
+	margin: 1px 0;
+}
+textarea {
+	height: 111px;
+	width: 500px;
+	max-width: 500px;
+	margin: 3px 0px 0px 2px;
+}
+
+/* Login */
+
+div.form {
+	width: 630px;
+	float: right !important;
+	margin-top: -56px;
+
+	position: relative;
+}
+div.form input#gebruikersnaam,
+div.form input#ww {
+	margin-left: 20px;
+	float: left;
+}
+div.form input#aanmelden {
+	float: left;
+	margin: 0px 0px 0px 20px;
+}
+
+/* Logo */
+
+.logo {
+	float: left;
+	margin-top: 3px;
+}
+.error {
+	background-color: white;
+	border-radius: 4px;
+	border: 1px solid rgb(165, 165, 165);
+	padding: 0px 0px 10px 20px;
+	color: rgb(60, 60, 60);
+	font-size: 19px;
+	height: 80px;
+}
+
+.searchbtn {
+	padding: 10px 12px 2px 23px;
+	background: rgb(233, 233, 233);
+	border: 1px rgb(185, 185, 185) solid;
+	width: 60px !important;
+	height: 26px !important;
+	cursor: pointer;
+	float: right;
+	margin: 18px 20px 0px 0px;
+}
+
+/* SEARCH PAGE*/
+.searchresult1 {
+	float: left;
+	height: 80px;
+	padding: 20px 30px 20px 32px;
+	cursor: pointer;
+	display: block;
+}
+.searchresult1:hover {
+	background-color:#f6f7f8;
+}
+.searchresult1 img {
+	height: 40px;
+	width: 40px;
+}
+.searchresult1 img.lvl0 {
+	border-left: 4px solid #68C970;
+}
+.searchresult1 img.lvl1 {
+	border-left: 4px solid #3897D6;
+}
+.searchresult1 img.lvl2 {
+	border-left: 4px solid #C23737;
+}
+.searchresult1 p {
+	margin: -34px 0px 0px 56px
+}
+.searchresult1 a {
+	color: rgb(37, 37, 37);
+	text-decoration: none;
+}
+
+/* Opdrachten PAGE*/
+
+.searchresult2 {
+	float: left;
+	width: 400px;
+	height: auto;
+	min-height: 80px;
+	max-height: auto;
+	padding: 10px 0px 10px 10px;
+	cursor: pointer;
+	margin: 10px 28px;
+}
+.searchresult2 a {
+	text-decoration: none;
+	color: gray;
+}
+.searchresult2 img {
+	height: auto;
+	max-height: 80px;
+	width: 80px;
+}
+.searchresult2:hover {
+	background-color:#f6f7f8;
+}
+.searchresult2 div.projectleider {
+	position: absolute;
+}
+.searchresult2 p.lid {
+	position: absolute;
+	font-size: 20px;
+	line-height: 0;
+	margin: 7px 0px 0px 94px;
+}
+.searchresult2 div {
+	position: absolute;
+}
+.searchresult2 div p,
+.searchresult2 div h2 {
+	font-size: 16px;
+	font-weight: 100;
+	margin: 58px 0px 0px 94px;
+	line-height: 0;
+}
+.searchresult2 div.projectleider p {
+	position: absolute;
+	margin-left: 80px;
+	margin: 41px 0px 0px 187px;
+}
+.searchresult2 div.projectleider h2 {
+	margin-left: 94px;
+	margin-top: 37px;
+}
+.searchresult2 div.opdrachtgever p {
+	position: absolute;
+	margin: 58px 0px 0px 201px;
+}
+.searchresult2 div.opdrachtgever h2 {
+	margin-left: 94px;
+}
+.searchresult2 div.omschrijving {
+	display: none;
+}
+
+/* END OPDRACHTEN-*/
+
+div.select {
+	width: 480px;
+	margin: 7px 0px 0px 400px;
+}
+div.select .options {
+	float: left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 25px 0px 25px;
+	border-left: 1px solid gray;
+	font-size: 18px;
+}
+div.select .options:first-child {
+	float: left;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 25px 0px 25px;
+	border: none;
+}
+#skilloption {
+	height: 32px;
+	margin: 19px 0px 0px 20px;
+	width: 200px;
+}
+.select img {
+	position: absolute;
+	margin: 4px 0px 0px -10px;
+}
+.searching div {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+.searching div#searchmembers {
+	display: block;
+}
+#searchtext {
+	width: 915px;
+	height: 68px;
+	margin-top: 2px;
+	padding: 0px 0px 0px 19px;
+	border: none;
+	font-size: 25px;
+	color: gray;
+	outline: none
+}
+div.select div.options {
+	cursor: pointer;
+}
+
+.title2 {
+	padding: 5px 0px 4px 0px;
+	width: 94%;
+	border-bottom: 1px solid rgb(204, 204, 204);
+	margin-left: 3%;
+	margin-bottom: 10px;
+	font-size: 20px;
+	color: rgb(168, 168, 168);
+}
+.title3 {
+	float: left;
+}
+.title4 {
+	float: left;
+	font-size: 16px;
+	margin-top: 5px;
+}
+.opdrachten .title3 {
+	color: rgb(38, 131, 177);
+}
+.title2 h4 {
+	margin-left: 10px;
+	line-height: 0px;
+	font-weight: 100;
+	margin-top: 10px;
+	margin-bottom: 12px;
+}
+div.blocks {
+	margin: 17px 0px 20px 38px;
+}
+div.label {
+	float: left;
+	width: 180px;
+	font-size: 19px;
+	padding: 4px 0px 0px 0px;
+	color: rgb(104, 104, 104);
+}
+input[type="radio"] {
+	margin: 9px 3px 0px 3px;
+}
+a.projectpic {
+    position: absolute;
+    left:2%;
+    top:15px;
+	/* margin: 41px 0px 0px 26px !important; */
+	float: none;
+}
+a.projectpic img {
+	border: 1px solid rgb(207, 207, 207);
+}
+img.projectbanner {
+	width: 100%;
+	margin: -202px 0px 0px 0px;
+	border-left: 1px solid #B9B9B9;
+	border-right: 1px solid #B9B9B9;
+}
+div.projectbanner {
+	padding: 0px 0px 0px 0px;
+}
+.projectcontent {
+	margin: -3px 0px 20px 0px;
+	width: 100%;
+	background-color: white;
+	border: 1px rgb(185, 185, 185) solid;
+	border-top: none;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	min-height: 60px;
+	padding-top: 5px;
+}
+div.connectstatus {
+	position: absolute;
+	margin: 184px 0px 0px 577px;
+	width: 350px;
+        top: 184px;
+}
+div.connectstatus .projectbtn {
+	float: right;
+	margin: 0px 0px 0px 10px;
+	background-color: white;
+	color: rgb(0, 74, 111);
+	padding: 4px 10px 5px 10px;
+	border: 1px solid gray;
+	opacity: 0.85;
+}
+div.connectstatus label {
+	float: right;
+	margin: 5px 0px 0px 10px;
+	color: white;
+	text-shadow: 0px 2px 14px black;
+	opacity: 0.9;
+	font-size: 16px;
+        
+}
+div.projectcontent div.omschrijving {
+	margin: -4px 0px 10px 21px;
+	padding-top: 10px;
+	width: 900px;
+	font-size: 15px;
+	white-space: pre-line;
+	overflow: initial;
+}
+div.projectcontent div.skills {
+	margin: 10px 0px 0px 10px;
+	padding-top: 10px;
+	width: 940px;
+	font-size: 15px;
+}
+
+.listitem2 a.edit {
+	display: none;
+	margin: -22px 17px 0px -9px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 4px;
+	padding: 2px 6px 4px 6px;
+	border: 1px solid rgb(211, 211, 211);
+	opacity: 0.75;
+}
+.one .listitem,
+.two .listitem {
+	border-radius: 8px;
+}
+div.divisie {
+	margin: -3px 0px 0px 300px;
+	position: absolute;
+	width: auto;
+	height: 20px;
+	font-size: 18px;
+}
+div.divisie .selectbox {
+	background-color: white;
+	height: 25px;
+	color: rgb(90, 90, 90);
+}
+div.legenda {
+	margin: 4px 0px 0px 160px;
+	position: absolute;
+	width: 340px;
+	height: 40px;
+	font-size: 18px;
+}
+div.legenda h4 {
+	margin: 0px;
+	padding: 0px;
+	float: left;
+	color: rgb(131, 131, 131);
+	font-weight: 200;
+}
+
+div.legenda div.color {
+	background-color: black;
+	height: 10px;
+	width: 10px;
+	float: left;
+	margin: 4px 5px 0px 15px;
+}
+div.legenda div.ont {
+	background-color: #349602;
+	border: 1px solid #2A7404;
+}
+div.legenda div.basis {
+	background-color: #026596;
+	border: 1px solid #044F74;
+}
+div.legenda div.prof {
+	background-color: #960203;
+	border: 1px solid #740405;
+}
+
+div.legenda div.ont:hover .lvl0 {
+	background-color: yellow;
+}
+
+a.logo-fof {
+	width: 100%;
+	text-align: right;
+	float: right;
+	padding: 12px 15px;
+}
+
+/* first things first - get your box-model straight*/
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+label {
+    /* just positioning */
+    float: left; 
+    margin-bottom: .5em;
+}
+
+.upload-button {
+    /* key */
+    position: relative;
+    overflow: hidden;
+
+    /* just positioning */
+    float: left; 
+    clear: left;
+	
+	margin: 0px 0px 0px 10px !important;
+}
+
+.upload-cover { 
+    /* basically just style this however you want - the overlaying file upload should spread out and fill whatever you turn this into */
+	color: #FFF;
+    background-color: #3FACE2;
+    text-align: center;
+    padding: 8px 22px;
+    border-radius: 4px;
+    border: 1px solid #2683B1;
+    cursor: pointer;
+}
+
+.upload-button input[type="file"] {
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    margin-left: -75px; /* gets that button with no-pointer-cursor off to the left and out of the way */
+    width: 200%; /* over compensates for the above - I would use calc or sass math if not here*/
+    height: 100%;
+    opacity: 0; /* left this here so you could see. Make it 0 */
+    cursor: pointer;
+    border: 1px solid #2683B1;
+}
+
+.upload-button:hover .upload-cover {
+	background-color: #3BA0D3;
+}
+
+a.footerlink {
+	width: 100%;
+	text-align: right;
+	float: right;
+	padding: 12px 15px;
+	margin-bottom: 20px;
+	border-radius: 4px;
+	border: 1px solid #B9B9B9;
+	background-color: white;
+}
+
+.schaduw {
+	-webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow:    0px 4px 4px 0px rgba(0, 0, 0, 0.35);
+	box-shadow:         0px 4px 4px 0px rgba(0, 0, 0, 0.35);
+}

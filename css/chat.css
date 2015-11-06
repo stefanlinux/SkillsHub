@@ -1,0 +1,28 @@
+#content-chat{
+  margin-bottom: 10px
+  width:120%;
+}
+
+input {
+  font-size: 20px 
+}
+
+#scroll {
+  display:inline-block;
+  position: relative; 
+  width: 500px;
+  height: 340px; 
+  overflow: auto;
+  padding-left:6px;
+  font-size:20px;
+}
+
+.item {
+  margin-bottom: 6px
+}
+
+#colorpicker
+{
+    text-align:right;
+    
+}

@@ -1,0 +1,31 @@
+.textbox {
+	margin: 20px 10px 0px 10px !important;
+	outline: none;
+}
+.textbox:active{
+	outline: rgb(63, 172, 226) 1px solid !important;
+}
+span {
+	margin-left: 20px !important;
+}
+.btnSearch {
+	width: auto !important;
+	display: block !important;
+	padding: 8px 22px 8px 22px;
+	border: 1px solid rgb(38, 131, 177);
+	background-color: rgb(63, 172, 226);
+	border-radius: 4px;
+	font-size: 15px;
+	color: white;
+	float: right;
+	margin: 20px 50px 0px 0px;
+	text-decoration: none;
+	cursor: pointer;
+}
+div.select {
+	width: 480px;
+	margin: 7px 0px 0px 290px !important;
+}
+div.searchresult1 {
+	width: 50% !important;
+}

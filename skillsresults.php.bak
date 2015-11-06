@@ -1,0 +1,78 @@
+<?php
+require_once 'core/init.php';
+$user = new User();
+if ($user->isLoggedIn()) {
+   
+	
+    //	include("include/global_header.php");
+
+	$username = Session::get(Config::get('session/session_name'));
+    echo $username;
+    $d = $_GET["d"];
+    $whitesmoke = 1;
+	$skillslist = array();
+    $sql = "SELECT * FROM skillsusers";
+    $data = DB::getInstance()->query($sql);
+    var_dump($data);
+	
+foreach ($data->result() as $rij) {
+		if ($rij->usersid == $username) {
+			array_push($skillslist, $rij->skill);
+		}
+	}
+
+if ($d == "-") {
+
+        $sql = "SELECT * FROM skills";
+        $data = DB::getInstance()->query($sql);
+        
+	}
+        
+	} else if ($d == "Admin: skills verwijderen") {
+
+        $sql = "SELECT * FROM skills";
+        $data = DB::getInstance()->query($sql);
+		unset($skillslist);
+		$skillslist = array();
+	}
+	else {
+		$sql = "SELECT * FROM skills WHERE divisie='$d'";
+        $data = DB::getInstance()->query($sql);
+	}
+
+	if (!empty($data)) {
+		
+		foreach ($data->results() as $rij) {
+		
+			//if (in_array($rij["id"], $skillslist, true)) {echo "test-check";}
+			//else {			
+				echo "<div class=\"listitem2 listitem3 ";
+				if($whitesmoke == 0) {
+					echo "whitesmoke";
+					$whitesmoke = 1;
+				} else {
+					$whitesmoke = 0;
+				}
+                
+				echo "\">";
+				echo "<p>" . $rij["skill"] . "</p>";
+                
+				if (isset($_GET["admin"]) == false) {
+
+                    echo "<a href=\"addskill.php?t=" . $rij["id"] . "&u=" . $username . "&lvl=2\" class=\"edit\">professioneel</a><a href=\"addskill.php?t=" . $rij["id"]  . "&u=" . $username . "&lvl=1\" class=\"edit\">basis</a><a href=\"addskill.php?t=" . $rij["id"]  . "&u=" . $username . "&lvl=0\" class=\"edit\">ontwikkel</a><p class=\"edit\">Skill toevoegen als:</p></div>";
+				}
+                
+				if (isset($_GET["admin"]) == true) {	
+					echo "<a href=\"deleteskill.php?t=" . $rij["id"] . "&u=" . $username  . "\" class=\"edit\">Verwijderen</a></div>";
+				}
+			
+		}
+	}
+	else {
+		echo "<div class=\"listitem2 listitem3\"><p>Nog geen skills in dit vakgebied aanwezig</p></div>";
+	}
+	
+    } else {
+    Redirect::to('login.php');
+}
+?>

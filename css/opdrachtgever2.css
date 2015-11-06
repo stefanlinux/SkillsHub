@@ -1,0 +1,23 @@
+div.contactpersoon {
+	width: 100%;
+	cursor: pointer;
+	height: 21px;
+}
+div.contactpersoon div.verwijderen {
+	width: 0px;
+	transition: all 0.3s;
+	float: left;
+	overflow: hidden;
+	padding-top: 5px;
+}
+div.contactpersoon:hover div.verwijderen {
+	width: 30px;
+	display: block;
+}
+div.contactpersoon div.label {
+	width: auto;
+	margin-left: 20px;
+}
+div.contactpersoon div.label2 {
+	margin-left: 0px;
+}

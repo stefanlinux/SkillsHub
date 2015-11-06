@@ -1,0 +1,190 @@
+div.select {
+	width: 480px;
+	margin: 7px 0px 0px 260px!important;
+}
+div div.peoplelist  div.listitem2 {
+	width: 100%;
+	padding-left: 9px;
+	padding-bottom: 18px;
+	padding-top: 7px;
+	transition: all 0.5s;
+	min-height: 30px;
+}
+.peoplelist div div.listitem2:hover {
+	height: 85px;
+}
+
+div div.listitem2:hover  p.omschrijving {
+	display: block;
+}
+p.omschrijving {
+	display: none;
+	margin: 4px 0px 0px 50px !important;
+	transition: all 1s;
+	font-size: 14px;
+	color: gray;
+	max-width: 450px;
+	max-width: 257px;
+	height: 66px;
+	overflow: hidden;
+}
+
+div.projectleider {
+	width: 100%;
+	padding: 0px 5% 0px 5%;
+}
+div.projectleider p {
+	margin: -32px 0px 23px 54px;
+}
+div.contactinfo {
+	width: 100%;
+	margin-top: 5px;
+	height: 16px;
+	cursor: pointer;
+}
+div.contactinfo:hover {
+    color: rgb(38, 131, 177);
+}
+div.contactinfo div.content-left {
+	width: 50px;
+	margin-right: 10px;
+}
+div.people {
+	height: 440px !important;
+}
+div.people .content {
+	height: 70%;
+}
+div.media {
+	width: 918px;
+	padding: 10px 10px 8px 10px;
+	background-color: rgb(235, 240, 243);
+	border-radius: 0px 0px 4px 4px;
+	border-top: 1px solid rgb(197, 197, 197);
+	transition: all 0.5s;
+	overflow: hidden;
+}
+div.media a {
+	float: left;
+}
+div.media a img.media {
+	opacity: 0.8;
+	transition: all 0.3s;
+	margin: 2px 10px 2px 0px;
+}
+div.media a img.media:hover {
+	opacity: 1;
+	/*-webkit-transform: rotate(-5deg);
+     -moz-transform: rotate(-5deg);
+       -o-transform: rotate(-5deg);
+      -ms-transform: rotate(-5deg);
+          transform: rotate(-5deg);*/
+}
+input {
+	margin: 7px 0px 0px 560px;
+}
+div.uploadform {
+	height: 63px;
+	width: 300px;
+	overflow: hidden;
+	padding: 30px 0px 0px 0px;
+}
+div.uploadform .button {
+	border-radius: 4px 0px 0px 4px!important;
+	position: absolute;
+	margin: 0px 0px 0px 10px!important;
+	min-height: 16px;
+	transition: all 0.5s;
+}
+div.uploadform input#fileup {
+	margin: 5px 0px 0px -109px!important;
+
+}
+div.uploadform div.uploadbtn {
+	position: absolute;
+	margin: 0px 0px 0px 117px;
+	padding: 10px 9px 8px 9px;
+	border: 1px solid rgb(38, 131, 177);
+	background-color: rgb(63, 172, 226);
+	border-radius: 0px 4px 4px 0px;
+	font-size: 15px;
+	color: white;
+	float: right;
+	border-left: none;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+div.uploadform div.uploadbtn:hover,
+div.uploadform .button:hover {
+	background-color: rgb(59, 160, 211);
+}
+div.media div.image {
+	height: auto;
+	width: auto;
+}
+div.media div.delete {
+	background-color: rgb(235, 240, 243);
+	color: black;
+	opacity: 0.8;
+	width: 14px;
+	height: 19px;
+	font-size: 14px;
+	margin: 2px 0px 0px -29px;
+	float: left;
+	padding: 4px 0px 0px 7px;
+	border-radius: 0px 4px 0px 4px;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+
+div.media a:hover div.delete {
+	display: block;
+}
+
+div.media div.delete:hover {
+	width: 16px;
+	height: 21px;
+	padding: 6px 0px 0px 8px;
+	margin: 0px 0px 0px -32px;
+}
+div.skillslist div.content {
+	padding: 6px 0px 0px 12px;
+	width: 627px!important;
+	height: 252px!important;
+} 
+.lvl0 {
+	padding:6px 10px 7px 10px!important;
+	height: auto!important;
+	border-radius: 8px;
+}
+div div.peoplelist .listitem2 {
+	float: left;
+	width: 311px!important;
+}
+div.content a.profielpic img{
+	height: 160px!important;
+}
+.block {
+	margin: -8px 15px 20px 20px;
+	width: auto;
+	padding: 20px 0px 0px 0px;
+	float: left;
+}
+
+.block h3 {
+	font-size: 15px!important;
+	margin-bottom: 13px!important;
+}
+p.naam {
+	margin: -45px 0px 0px 52px!important;
+}
+p.tel {
+	margin: 0px 0px 0px 52px!important;
+	color: rgb(112, 112, 112);
+}
+div.requests div div.listitem2 {
+	padding-bottom: 11px!important;
+}
+

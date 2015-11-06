@@ -1,0 +1,112 @@
+<?php
+require_once 'core/init.php';
+$user = new User();
+if ($user->isLoggedIn()) {
+include("include/global_header.php");
+include ("include/menu.php");
+} else {
+  Redirect::to('login');
+}
+if (!$user->hasPermission('admin')) {
+		exit;
+	}
+
+?>
+<script type="text/javascript">
+function menu() {
+	$('.navopdracht').addClass('selectedmenu');
+}
+</script>
+</head>
+<body onLoad="menu()">
+	<div class="content">
+<?php
+$user = Session::get(Config::get('session/session_name'));
+if (isset($_POST['omschrijving'])) {
+    $sql = "SELECT * FROM `users` WHERE id='$_POST[projectleider]'";
+    $data = DB::getInstance()->query($sql);
+
+    foreach ($data->results() as $rij) {
+    $projectleider = $rij->id;
+}
+			
+    $sql = "SELECT * FROM `opdrachtgever`";
+    $data = DB::getInstance()->query($sql);
+            
+    foreach ($data->results() as $rij) {
+    $result = $rij->opdrachtgever . ' - ' . $rij->volledigenaam;
+    if($_POST["opdrachtgever"] == $result) {
+    $opdrachtgever = $rij->id;
+    $bedrijf = $rij->opdrachtgever;
+}
+} 
+			$omschrijving = str_replace("'","&#39;",$_POST["omschrijving"]);
+			//$sql = "INSERT INTO projects (id , naam, omschrijving, skills, startdatum, einddatum, projectleider, opdrachtgever, bedrijf) VALUES (NULL, '$_POST[projectnaam]', '$omschrijving', '$_POST[skills]', '$_POST[startdatum]', '$_POST[einddatum]', '$projectleider', '$opdrachtgever', '$bedrijf' )";
+
+            $sql = "INSERT INTO projects (id , naam, omschrijving, startdatum, einddatum, projectleider, opdrachtgever, bedrijf) VALUES (NULL, '$_POST[projectnaam]', '$omschrijving', '$_POST[startdatum]', '$_POST[einddatum]', '$projectleider', '$opdrachtgever', '$bedrijf' )";
+			$data = DB::getInstance()->query($sql);
+			
+			$sql = "INSERT INTO projectsusers (id , project, usersid, accept) VALUES (NULL, '$_POST[projectnaam]', '$projectleider', '3' )";
+			$data = DB::getInstance()->query($sql);
+            $sql = "SELECT * FROM `projects` WHERE naam = '$_POST[projectnaam]'";
+			$data = DB::getInstance()->query($sql);
+
+			foreach ($data->results() as $rij) {
+				$target = $rij->id;
+			}
+			echo "<meta http-equiv=\"refresh\" content=\"0;url=project.php?n=" . $target .  "\"  >";
+		} else {
+		?>
+			<div class="list editprofile shadow">
+				<div class="title radius">
+					<img src="img/iSkill.png" height="30" /><p>Project aanmaken</p>
+				</div>
+				<div class="content">
+					<form id="frm" name="frm" method="post" action="">  
+						<div class="title2"><h4>Algemene informatie</h4></div>
+						<div class="blocks">
+							<div class="label">Projectnaam:</div> <input type="text" id="projectnaam" class="textbox" name="projectnaam" value=""><br />
+							<div class="label">Opdrachtgever:</div> <select class="textbox" name="opdrachtgever" style="width: 226px">
+								<?php
+            $sql = "SELECT * FROM `markt`";
+            $data = DB::getInstance()->query($sql);
+            foreach ($data->results() as $rij) {
+									echo '<option value='.$rij->id.'>';
+									echo $rij->opdrachtgever;
+									if(!empty($rij->voornaam)) echo ' - ' . $rij->voornaam;
+									if(!empty($rij->tussenvoegsel)) echo " ".$rij->tussenvoegsel;
+									if(!empty($rij->achternaam)) echo " ".$rij->achternaam;
+									echo '</option>';
+								}
+								?>
+							</select><br /><br />
+							<div class="label">Projectleider:</div> <select class="textbox" name="projectleider" style="width: 226px">
+								<?php
+            $sql = "SELECT * FROM `users` WHERE accounttype != 0 AND user != 'Admin'";
+            $data = DB::getInstance()->query($sql);
+            foreach ($data->results() as $rij) {
+									echo '<option value='.$rij->id.'>' . $rij->naam;
+									if(!empty($rij->tussenvoegsel)) echo " ".$rij->tussenvoegsel;
+									if(!empty($rij->achternaam)) echo " ".$rij->achternaam;
+									echo '</option>';
+								}
+								?>
+							</select><br /><br />
+							<div class="label">Startdatum:</div>  <input type="date" id="startdatum" class="textbox" name="startdatum" value=""><br />
+							<div class="label">Einddatum:</div>  <input type="date" id="einddatum" class="textbox" name="einddatum" value=""><br />
+						</div>
+						<div class="title2"><h4>Omschrijving</h4></div>
+						<div class="blocks">	
+							<div class="label">Omschrijving:</div> <textarea name="omschrijving" class="textbox" style="overflow:auto" id="omschrijving" cols="67" rows="5"></textarea><br />
+							<!-- <div class="label">Skills:</div> <textarea name="skills" style="overflow:auto" class="textbox"  id="skills" cols=67 rows=5 ></textarea><br /> //-->
+						</div>
+						<input type="submit" class="buttonaa" value="Project toevoegen" />  
+					</form>
+		<?php
+		}
+		?>
+				</div>
+			</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+div.listitem2 {
+	max-height: 41px!important;
+	padding-bottom: 12px!important;
+}
+div.listitem3 div.functions {
+	width: 0px;
+	transition: all 0.3s;
+	float: left;
+	overflow: hidden;
+	padding-top: 5px;
+}
+div.listitem3:hover div.functions {
+	width: 30px;
+	display: block;
+}
+div div.listitem3 p {
+	margin: 5px 0px 0px 12px!important;
+}
+div.listitem2 .functions img {
+	height: 20px!important;
+	width: auto!important;
+	margin: -4px 0px 0px 4px!important;;
+}

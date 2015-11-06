@@ -1,0 +1,25 @@
+admin-projecten.php link gewijzigd en toegevoedgd projectbewerken-admin.php
+
+
+* notes
+- deleteopdrachtgever delete statements uitgezet!!
+
+
+
+
+    <script>
+    function deleteproject(naam, leider) {
+        var answer = confirm("Weet u zeker dat u het project wilt verwijderen? Dit kan niet ongedaan worden.")
+            if (answer) {
+                link = "deleteprojects.php?p=" + naam + "&l=" + leider;
+                window.location.href = link;
+            }
+        else {
+            //some code
+        }
+    }
+  
+    function menu() {
+        $('.navopdracht').addClass('selectedmenu');	
+    }
+    </script>

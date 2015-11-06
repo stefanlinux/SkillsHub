@@ -1,0 +1,148 @@
+<?php include ("include/clsDatabase.php");
+
+$searchsort=$_GET["searchsort"];
+$searchtext=$_GET["s"];
+
+if($searchsort == "skills") {
+	$lvl=$_GET["lvl"];
+	$skill=$_GET["skill"];
+	if($lvl == "Ontwikkel")	{
+		$lvl = "0";
+	}
+	if($lvl == "Basis")	{
+		$lvl = "1";
+	}
+	if($lvl == "Professioneel")	{
+		$lvl = "2";
+	}
+	if($lvl == "-")	{
+		$sql = "SELECT * FROM `skillsusers` WHERE skill='$skill'";
+		$data = $rs->dataOpvragen($sql);
+	}
+	else {
+		$sql = "SELECT * FROM `skillsusers` WHERE skill='$skill' AND lvl='$lvl'";
+		$data = $rs->dataOpvragen($sql);
+	}
+	if($data != "")	{
+		foreach($data as $rij) {
+			$usersid = $rij['usersid'];
+			$sql = "SELECT * FROM `users` WHERE id='$usersid' ";
+			$data2 = $rs->dataOpvragen($sql);
+	     	foreach($data2 as $rij2) {
+		        $naam = $rij2["volledigenaam"];
+		    }
+			echo '<div class="searchresult1">' . '<a  href="profiel/' .  $rij["usersid"] . '">';
+			if (file_exists("img/profilepic/" . $rij["usersid"] . ".jpg")) {
+				echo "<img class=\"radius2 lvl\"src=\"img/profilepic/" . $rij["usersid"] . ".jpg\">";
+			}
+			else {
+				echo "<img class=\"radius2 lvl\" src=\"img/profilepic/noprofile.jpg\">";
+			}
+			echo '<p>' . $naam . "</p></a></div>";
+		}
+	}	
+}
+
+if($searchsort == "members")
+{
+	$data = $rs->dataOpvragen("SELECT * FROM `users` ");
+	if($searchtext != "") {
+		foreach($data as $rij) {
+			if(strpos(strtolower($rij["volledigenaam"]),strtolower($searchtext)) !== false)	{
+				echo '<div class="searchresult1">' . '<a  href="profiel/' .  $rij["id"] . '">';
+				if (file_exists("img/profilepic/" . $rij["id"] . ".jpg")) {
+								echo "<img class=\"radius2 lvl";
+								//echo $rij["lvl"];
+								echo "\"src=\"img/profilepic/" . $rij["id"] . ".jpg\">";
+				}
+				else {
+					echo "<img class=\"radius2 lvl";
+					echo "\" src=\"img/profilepic/noprofile.jpg\">";
+				}
+				echo '<p>' .$rij["volledigenaam"] . "</p></a></div>";
+			}		
+		}
+	}
+}
+
+if($searchsort == "projects") {
+	$status=$_GET["status"];
+	$skill=$_GET["skill"];
+	if($status == "-" && $skill == "-") {
+		$data = $rs->dataOpvragen("SELECT * FROM `projects` ");
+		if($data != "")	{
+			foreach($data as $rij) {
+				echo '<div class="searchresult1">' . '<a  href="project/' .  $rij["id"] . '">';
+				if (file_exists("img/projectpic/" . $rij["id"] . ".jpg")) {
+					echo "<img class=\"radius2 lvl\"src=\"img/projectpic/" . $rij["id"] . ".jpg\">";
+				}
+				else {
+					echo "<img class=\"radius2 lvl\" src=\"img/profilepic/noprofile.jpg\">";
+				}
+				echo '<p>' .$rij["naam"] . "</p></a></div>";
+			}
+		}
+	}
+	else if ($skill == "-" && $status != "-"){
+		$data = $rs->dataOpvragen("SELECT * FROM `projects` WHERE status='$status' ");
+		if($data != "")	{
+			foreach($data as $rij) {
+				echo '<div class="searchresult1">' . '<a  href="project/' .  $rij["naam"] . '">';
+				if (file_exists("img/projectpic/" . $rij["id"] . ".jpg")) {
+					echo "<img class=\"radius2 lvl\"src=\"img/projectpic/" . $rij["id"] . ".jpg\">";
+				}
+				else {
+					echo "<img class=\"radius2 lvl\" src=\"img/profilepic/noprofile.jpg\">";
+				}
+				echo '<p>' .$rij["naam"] . "</p></a></div>";
+			}
+		}
+	}
+	else if ($skill != "-" && $status == "-") {
+		$data = $rs->dataOpvragen("SELECT `projects`.`id`, `projects`.`naam` FROM `projectskills`, `projects` WHERE skillid='$skill' AND `projectskills`.`projectid` = `projects`.`id`");
+		if($data != "") {
+			foreach($data as $rij) {
+			
+				//$arrayskills = $rij["skillid"];
+				//$arrayskills = str_replace(" ","",$arrayskills);
+				//$arrayskills = (explode(",",$arrayskills));
+				
+				//if (in_array($skill, $arrayskills, true)) {
+				
+				echo '<div class="searchresult1">' . '<a  href="project/' .  $rij["id"] . '">';
+				if (file_exists("img/projectpic/" . $rij["id"] . ".jpg")) {
+					echo "<img class=\"radius2 lvl\"src=\"img/projectpic/" . $rij["id"] . ".jpg\">";
+				}
+				else {
+					echo "<img class=\"radius2 lvl\" src=\"img/profilepic/noprofile.jpg\">";
+				}
+				echo '<p>' .$rij["naam"] . "</p></a></div>";
+			}
+		}
+		else echo '<div class="searchresult1">Geen resultaten gevonden</div>';
+	}
+	else if ($skill != "-" && $status != "-") {
+		$data = $rs->dataOpvragen("SELECT `projects`.`id`, `projects`.`naam` FROM `projectskills`, `projects` WHERE `projectskills`.`skillid`='$skill' AND `projects`.`status`='$status' AND `projectskills`.`projectid` = `projects`.`id`");
+		if($data != "") {
+			foreach($data as $rij) {
+			
+				//$arrayskills = $rij["skillid"];
+				//$arrayskills = str_replace(" ","",$arrayskills);
+				//$arrayskills = (explode(",",$arrayskills));
+				
+				//if (in_array($skill, $arrayskills, true)) {
+				
+				echo '<div class="searchresult1">' . '<a  href="project/' .  $rij["id"] . '">';
+				if (file_exists("img/projectpic/" . $rij["id"] . ".jpg")) {
+					echo "<img class=\"radius2 lvl\"src=\"img/projectpic/" . $rij["id"] . ".jpg\">";
+				}
+				else {
+					echo "<img class=\"radius2 lvl\" src=\"img/profilepic/noprofile.jpg\">";
+				}
+				echo '<p>' .$rij["naam"] . "</p></a></div>";
+			}
+		}
+		else echo '<div class="searchresult1">Geen resultaten gevonden</div>';
+	}	
+}
+?>

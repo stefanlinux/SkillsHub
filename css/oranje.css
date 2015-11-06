@@ -1,0 +1,46 @@
+div.nav {
+	width: 100%;
+	min-width: 960px;
+	height: 32px;
+	background-color: #0fb3f0;
+	padding-top: 8px;
+	margin-bottom: 20px;
+	border-top: 1px solid rgb(173, 54, 7);
+	border-bottom: 1px solid rgb(173, 54, 7);
+	background-color: rgb(236, 104, 51);
+	}
+	div.lvl0 {
+		background-color: rgb(245, 165, 133);
+		color: rgb(150, 70, 39) !important;
+	}
+	div.lvl1 {
+		background-color: rgb(236, 121, 75);
+		color: rgb(255, 214, 197);
+	}
+	div.lvl2 {
+		background-color: rgb(202, 84, 37);
+		color: rgb(255, 189, 163) !important;
+	}
+	.one .listitem, .two .listitem{
+		border-radius: 0px;
+	}
+	.button{
+		border: 1px solid rgb(173, 54, 7);
+		background-color: rgb(236, 104, 51);
+	}
+	a.deleteitem {
+		color: rgb(104, 36, 9) !important;
+	}
+	div.lvl0 .deleteitem{
+		color: rgb(104, 36, 9) !important;
+	}
+
+	div div.listitem2:hover {
+		background-color: rgb(250, 221, 209);
+	}
+	div.content div div.title p {
+		color: rgb(231, 111, 63);
+	}
+	div.nav a:hover {
+	background-color: rgb(236, 121, 75);
+	}
