@@ -1,7 +1,7 @@
 <?php
 require_once 'core/init.php';
 $user = new User();
-
+echo 'hello';
 if (!$user->hasPermission('admin')) {
 		exit;
 	}
@@ -9,10 +9,11 @@ if (!$user->isLoggedIn()) {
     Redirect::to('login.php');
 }
 $v = $_GET["v"];
-echo $v;	
-$sql = "DELETE FROM vakgebieden WHERE id='$v'";
+echo $v;
+
+$sql = "DELETE FROM vakgebieden WHERE id=11";
 DB::getInstance()->query($sql);
 
 Redirect::to('admin-vakgebieden.php');
-//Redirect::to('projecten.php');
+Redirect::to('projecten.php');
 ?>

@@ -15,10 +15,9 @@ include ("fancybox.js");
 <body onLoad="loading()">
 <div class="content">
 <?php
-	
-
 	if(isset($_POST['skill'])) {
-		$sql = "INSERT INTO skills (id , skill, divisie) VALUES (NULL, '$_POST[skill]', '$_POST[divisie]')";
+        $skillencoded = utf8_decode($_POST['skill']);
+		$sql = "INSERT INTO skills (id , skill, divisie) VALUES (NULL, '$skillencoded', '$_POST[divisie]')";
         
         DB::getInstance()->query($sql);
 		echo '<meta http-equiv="refresh" content="0;url=admin-skills">';
@@ -27,7 +26,7 @@ include ("fancybox.js");
 	<div class="list editprofile shadow">
 		<div class="title radius">
 			<img src="img/iSkill.png" height="30" /><p>Skill toevoegen</p>
-			<a href="deleteskill.php" class="edit3">Skills verwijderen</a>
+			<a href="admin-skills.php" class="edit3">Skills</a>
 		</div>
 		<div class="content">
 			<form id="frm" name="frm" method="post" action="">

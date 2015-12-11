@@ -4,7 +4,7 @@
 $user = $_GET['u'];
 
 	include ("include/clsDatabase.php");
-	$data = $rs->dataOpvragen("SELECT * FROM `skillsusers` ORDER BY skill ASC");
+	$data = $rs->dataOpvragen("SELECT * FROM `skillsuserswilleren` ORDER BY skill ASC");
 	$whitesmoke = 1;
 	$skillslist = array();
 	foreach ($data as $rij) {
@@ -46,10 +46,10 @@ $user = $_GET['u'];
 				//echo "<p>" . $utfencoded . "</p>";
                 echo "<p>" . $rij["skill"] . "</p>";
 				if (isset($_GET["admin"]) == false) {
-					echo "<a href=\"addskill.php?t=" . $rij["id"] . "&u=" . $user . "&lvl=2\" class=\"edit\">professioneel</a><a href=\"addskill.php?t=" . $rij["id"]  . "&u=" . $user . "&lvl=1\" class=\"edit\">basis</a><a href=\"addskill.php?t=" . $rij["id"]  . "&u=" . $user . "&lvl=0\" class=\"edit\">ontwikkel</a><p class=\"edit\">Skill toevoegen als:</p></div>";
+					echo "<a href=\"addskillwilleren.php?t=" . $rij["id"] . "&u=" . $user . "&lvl=2\" class=\"edit\">professioneel</a><a href=\"addskillwilleren.php?t=" . $rij["id"]  . "&u=" . $user . "&lvl=1\" class=\"edit\">basis</a><a href=\"addskillwilleren.php?t=" . $rij["id"]  . "&u=" . $user . "&lvl=0\" class=\"edit\">ontwikkel</a><p class=\"edit\">Skill toevoegen als:</p></div>";
 				}
 				if (isset($_GET["admin"]) == true) {	
-					echo "<a href=\"deleteskill.php?t=" . $rij["id"] . "&u=" . $user  . "\" class=\"edit\">Verwijderen</a></div>";
+					echo "<a href=\"deleteskillwilleren.php?t=" . $rij["id"] . "&u=" . $user  . "\" class=\"edit\">Verwijderen</a></div>";
 				}
 			//}	
 		}

@@ -40,7 +40,7 @@ $data = DB::getInstance()->query($sql);
 					}
                     
 					echo "\">";
-					$volledigenaam = $rij->name ." ".$rij->tussenvoegsel . " " . $rij->achternaam;
+					$volledigenaam = utf8_encode($rij->name) . " " . utf8_encode($rij->tussenvoegsel) . " " . utf8_encode($rij->achternaam);
 					echo "<p>".$volledigenaam."</p>";
 					echo "<a href=\"profielbewerkenadmin.php?u=".$rij->id . "\" class=\"edit\">Bewerken</a> ";
 					if($rij->name != "Administrator") {

@@ -29,7 +29,7 @@ class User {
 
     public function update ($fields = array(), $id = null) {
         if (!$id && $this->isLoggedIn()) {
-            $id = $this-> data()->id;
+            $id = $this->data()->id;
         }
 
         if (!$this->_db->update('users', $id, $fields)) {

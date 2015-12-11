@@ -10,6 +10,3 @@
       <link rel="stylesheet" href="css/projects.css" type="text/css" media="screen" /> 
 <link rel="shortcut icon" href="img/favicon.ico" />
 <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
-</head>
-<body>
-<div class="content">

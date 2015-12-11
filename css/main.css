@@ -402,8 +402,8 @@ div.divider {
 }
 
 div.content a.profielpic {
-	padding: 6px 6px 1px 6px;
-	margin: 11px 10px 0px 100px;
+	/* padding: 6px 6px 1px 6px; */
+	margin: 11px 10px 0px 10px;
 	float: left;
 }
 div.content a.profielpic img {
@@ -418,7 +418,7 @@ div.content div.projectnaam,
 div.content div.projectopdrachtgever,
 div.content div.projectstatus {
 	position: absolute;
-	margin: 200px 0px 0px 202px;
+	margin: 10px 0px 0px 202px;
 	font-size: 39px;
 	color: white;
 	text-shadow: 0px 2px 14px black;
@@ -432,11 +432,11 @@ div.content div.projectopdrachtgever a {
 	text-decoration: none;	
 }
 div.content div.projectopdrachtgever {
-	margin: 235px 0px 0px 202px;
+	margin: 55px 0px 0px 202px;
 	font-size: 34px;
 }
 div.content div.projectstatus {
-	margin: 340px 0px 0px 202px;
+	/* margin: 340px 0px 0px 202px; */
 	font-size: 17px;
 	background-color: white;
 	color: rgb(0, 74, 111);
@@ -446,6 +446,7 @@ div.content div.projectstatus {
 	opacity: 0.85;
 	box-shadow: 0px 0px 7px white;
 	text-shadow: none;
+        top: 244px;
 }
 div.menucontent {
 	margin: auto auto;
@@ -749,6 +750,7 @@ div.content div.list div.listitem:hover + div.content div.request div.listitem a
 	border-width:thin; 
 	padding:3px 3px 3px 6px;
 	margin: 1px 0;
+        
 }
 textarea {
 	height: 111px;
@@ -990,8 +992,8 @@ input[type="radio"] {
 }
 a.projectpic {
     position: absolute;
-    left:151px;
-    top:190px;
+    /* left:151px; */
+    /* top:190px; */
 	/* margin: 41px 0px 0px 26px !important; */
 	float: none;
 }
@@ -1083,7 +1085,7 @@ div.divisie .selectbox {
 	color: rgb(90, 90, 90);
 }
 div.legenda {
-	margin: 4px 0px 0px 160px;
+	margin: 4px 0px 0px 230px;
 	position: absolute;
 	width: 340px;
 	height: 40px;
@@ -1195,4 +1197,16 @@ a.footerlink {
 	-webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.35);
 	-moz-box-shadow:    0px 4px 4px 0px rgba(0, 0, 0, 0.35);
 	box-shadow:         0px 4px 4px 0px rgba(0, 0, 0, 0.35);
+}
+
+
+#vakgebied{
+
+    width:400px;
+}
+
+
+
+.textboxsearch{
+    width:200px; 
 }

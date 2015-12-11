@@ -45,7 +45,12 @@ if ($data != "") {
         }
     }
 }
+?>
+</head>
+<body>
+<div class="content">
 
+<?php 
 
 echo $project->get_project_info($n);
 if($projectleider == "no") {
@@ -174,9 +179,9 @@ if ($projectleider == "yes" || $user->hasPermission('admin')) {
 }
 ?>
             <div class="legenda">
-				<div class="color ont"></div><h4>Ontwikkel</h4>
-				<div class="color basis"></div><h4>Basis</h4>
-				<div class="color prof"></div><h4>Professioneel</h4>
+		<!-- <div class="color ont"></div><h4>Ontwikkel</h4>
+		     <div class="color basis"></div><h4>Basis</h4>
+		     <div class="color prof"></div><h4>Professioneel</h4> -->
 			</div>
         </div>
         <div class="one">

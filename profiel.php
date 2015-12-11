@@ -37,11 +37,11 @@ include ("fancybox.js");
 	foreach($data->results() as $rij) {
         if ($u == $rij->id) { 		
 			$id = $rij->id;
-			$username = $rij->username;
+			$username = utf8_encode($rij->username);
 			$pass = $rij->password;
-			$naam = $rij->name;
+			$naam = utf8_encode($rij->name);
 			$tussenvoegsel = $rij->tussenvoegsel;
-			$achternaam = $rij->achternaam;
+			$achternaam = utf8_encode($rij->achternaam);
 			$age = $rij->age;
 	 		$adres = $rij->adres;
 			$woonplaats = $rij->woonplaats;
@@ -123,8 +123,8 @@ if(isset($leerdoel))	{
 	<div class="leerdoel list shadow">
 		<div class="title radius"><p>Leerdoel(en)</p>
 		<?php
-			if($rij->id == Session::get(Config::get('session/session_name')))	{
-				echo "<a class=\"edit\" href=\"profielbewerken/" . $id  . "\"><img src=\"img/icon_edit.png\"></a>";
+			if($rij->id == Session::get(Config::get('session/session_name')) || $user->hasPermission('admin') )	{
+				echo "<a class=\"edit\" href=\"profielbewerken?u=" . $id  . "\"><img src=\"img/icon_edit.png\"></a>";
 			}
 		?>
 		</div>
@@ -140,10 +140,10 @@ if(isset($leerdoel))	{
 
 	<div class="skillslist shadow">
 		<div class="title radius">
-			<img src="img/icon_skill.png" height="30" /><p>Skills</p>
+			<img src="img/icon_skill.png" height="30" /><p>Wat ik kan</p>
 			<?php
-    global $id;
-				if ($id == Session::get(Config::get('session/session_name')) )	{
+                        global $id;
+				if ($id == Session::get(Config::get('session/session_name')) || $user->hasPermission('admin'))	{
 					echo "<a class=\"edit\" href=\"skills.php?u=".$u."\"><img src=\"img/icon_edit.png\"></a>";
 				}
 			?>
@@ -155,9 +155,7 @@ if(isset($leerdoel))	{
 		</div>
 		<div class="one">
 		<?php
-           
-			
-                  //$id = Session::get(Config::get('session/session_name'));
+                             //$id = Session::get(Config::get('session/session_name'));
                   	$sql = "SELECT `skills`.`id` as `id`, `skills`.`skill` as `skill`, `skillsusers`.`lvl` as `lvl`, skillsusers . id as skillid FROM `skillsusers`, `skills` WHERE `skillsusers`.`usersid`='$u' AND `skillsusers`.`skill` = `skills`.`id` ORDER BY lvl ASC";
 
 //                   $sql = "SELECT * FROM skillsusers WHERE usersid='$u'";
@@ -176,14 +174,55 @@ if(isset($leerdoel))	{
 
 echo "<a class=\"deleteitem\" href=\"deleteuserskills.php?t=" . $rij->skillid ."&u=".  $u. "\">x</a>";
 echo "</div>";  
-                     
-					// }
 					
+				}
+		?>
+		</div>
+	</div><!-- Einde skills -->
+
+	<div class="skillslist shadow">
+		<div class="title radius">
+			<img src="img/icon_skill.png" height="30" /><p>Wat ik wil leren</p>
+			<?php
+
+                        global $id;
+				if ($id == Session::get(Config::get('session/session_name')) || $user->hasPermission('admin') )	{
+					echo "<a class=\"edit\" href=\"skillswilleren.php?u=".$u."\"><img src=\"img/icon_edit.png\"></a>";
+				}
+			?>
+			<div class="legenda">
+				<div class="color ont"></div><h4>Ontwikkel</h4>
+				<div class="color basis"></div><h4>Basis</h4>
+				<div class="color prof"></div><h4>Professioneel</h4>
+			</div>
+		</div>
+		<div class="one">
+		<?php
+                             //$id = Session::get(Config::get('session/session_name'));
+//                $sql = "SELECT `skills`.`id` as `id`, `skills`.`skill` as `skill`, `skillsusers`.`lvl` as `lvl`, skillsusers . id as skillid FROM `skillsuserswilleren`, `skills` WHERE `skillsusers`.`usersid`='$u' AND `skillsusers`.`skill` = `skills`.`id` ORDER BY lvl ASC";
+                                  	$sql = "SELECT `skills`.`id` as `id`, `skills`.`skill` as `skill`, `skillsuserswilleren`.`lvl` as `lvl`, skillsuserswilleren . id as skillid FROM `skillsuserswilleren`, `skills` WHERE `skillsuserswilleren`.`usersid`='$u' AND `skillsuserswilleren`.`skill` = `skills`.`id`";
+
+                  $data = DB::getInstance()->query($sql);            
+
+				foreach ($data->results() as $rij) {
+					echo "<div class=\"listitem shadow lvl" . $rij->lvl;
+					//echo "<div onclick=\"location.href='search.php?s=" . $rij->id . "';\" class=\"listitem shadow lvl" . $rij->lvl;
+					if (!$user->hasPermission('admin')) {
+						echo " noadmin";
+					}
+					 echo "\">" . $rij->skill; 
+		
+echo "<a class=\"deleteitem\" href=\"deleteuserskillssssss.php?t=" . $rij->skillid ."&u=".  $u. "\">x</a>";
+echo "</div>";  
+                     					
 				}
 			
 		?>
 		</div>
-	</div>
+	</div><!-- Einde skillswilleren -->
+
+
+        
 	<div class="projectlist shadow">
 		<div class="title radius">
 			<img src="img/icon_project.png" height="30" /><p>Projecten</p>

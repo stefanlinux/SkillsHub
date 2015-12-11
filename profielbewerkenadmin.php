@@ -10,6 +10,7 @@ if (!$user->isLoggedIn()) {
 include("include/global_header.php");
 include ("include/menu.php");
 include ('fancybox.js');
+error_reporting(0);
 ?>
 
 </head>
@@ -34,19 +35,65 @@ include ('fancybox.js');
 		}
 		DB::getInstance()->query($sql);
 	}
+
+
+if (isset($_POST['password']) && isset($_POST['password_again'])) {
+
+    $validate = new Validate();
+    $validation = $validate->check($_POST, array(
+        
+        'password' => array(
+            'required' => true,
+            'min' => 6
+        ),
+        'password_again' => array(
+            'required' => true,
+            'matches' => 'password'
+        )
+            
+    ));
+
+    if($validation->passed()) {
+            
+            
+       // $user = new User();
+$salt = Hash::salt(32);
+
+try {
+    //    $id = $_GET['u'];
+    $user->update(array(
+        
+        'password' => Hash::make(Input::get('password'), $salt),
+        'salt' => $salt
+    ));
+
+} catch(Exception $e) {
+    die($e->getMessage());
+}
+} else {
+    // ouput errors
+    //print_r($validation->errors());
+    /* foreach($validation->errors() as $error) {
+       echo $error, '<br>';
+       } */
+}
+}
+
+
+
 ?> 
 <?php
 $u = $_GET['u'];
 $sql = "SELECT * FROM users WHERE id = $u";
 $data = DB::getInstance()->query($sql);
-
+global $id;
 foreach($data->results() as $rij) {
 	$id = $rij->id;
-    $username = $rij->username;
+    $username = utf8_encode($rij->username);
     $password = $rij->password;
-    $name = $rij->name;
+    $name = utf8_encode($rij->name);
     $tussenvoegsel = $rij->tussenvoegsel;
-    $achternaam = $rij->achternaam;
+    $achternaam = utf8_encode($rij->achternaam);
     $age = $rij->age;
     $adres = $rij->adres;
     $woonplaats = $rij->woonplaats;
@@ -61,8 +108,7 @@ foreach($data->results() as $rij) {
     $site = $rij->site;
     $accounttype = $rij->accounttype;
     $status = $rij->status;
-	
-		}
+			}
 	
 ?>
 	<div class="list editprofile shadow">
@@ -163,10 +209,11 @@ $data = DB::getInstance()->query($sql);
 					<div class="label">linkedin:</div> <input type="text" id="linkedin" name="linkedin" class="textbox" value="<?php echo $linkedin; ?>" /><br/>
 					<div class="label">Site:</div> <input type="text" id="site" name="site" class="textbox" value="<?php echo $site; ?>" /><br/>
 				</div>
-				<!-- <div class="title2"><h4>Wachtwoord</h4></div>
+				<div class="title2"><h4>Wachtwoord</h4></div>
 				<div class="blocks">
-				<div class="label">Wachtwoord:</div> <input type="password" id="ww" name="ww" class="textbox" value="" /><br/>
-				</div> -->
+				 <div class="label">Wachtwoord:</div> <input type="password" id="ww" name="password" class="textbox" value="" /><br/>
+            <div class="label">Wachtwoord opnieuw:</div> <input type="password" id="ww" name="password_again" class="textbox" value="" /><br/>
+				</div> 
 				<input type="submit" name='submit'id="opslaan" class="button" value="Opslaan"> 
 			</form>
 		</div>

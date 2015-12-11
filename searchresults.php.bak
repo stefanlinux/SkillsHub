@@ -1,7 +1,4 @@
-<?php
-error_reporting(0);
-
-include ("include/clsDatabase.php");
+<?php include ("include/clsDatabase.php");
 
 $searchsort=$_GET["searchsort"];
 $searchtext=$_GET["s"];
@@ -23,25 +20,26 @@ if($searchsort == "skills") {
 		$data = $rs->dataOpvragen($sql);
 	}
 	else {
-$sql = "SELECT * FROM `skillsusers` WHERE skill='$skill' AND lvl='$lvl'";
-
+		$sql = "SELECT * FROM `skillsusers` WHERE skill='$skill' AND lvl='$lvl'";
 		$data = $rs->dataOpvragen($sql);
 	}
 	if($data != "")	{
 		foreach($data as $rij) {
-			$usersid = $rij['usersid'];
-			$sql = "SELECT * FROM `users` WHERE id='$usersid' ";
+			$usersid = $rij['id'];
+            //            var_dump($usersid);
+            //			$sql = "SELECT * FROM `users` WHERE id='$usersid' ";
+            			$sql = "SELECT * FROM `users` WHERE id=42 ";
 			$data2 = $rs->dataOpvragen($sql);
 	     	foreach($data2 as $rij2) {
-		        $naam = $rij2["volledigenaam"];
+		        $naam = $rij2['volledigenaam'];
 		    }
 			echo '<div class="searchresult1">' . '<a  href="profiel/' .  $rij["usersid"] . '">';
 			if (file_exists("img/profilepic/" . $rij["usersid"] . ".jpg")) {
 				echo "<img class=\"radius2 lvl\"src=\"img/profilepic/" . $rij["usersid"] . ".jpg\">";
 			}
-//			else {
-//	echo "<img class=\"radius2 lvl\" src=\"img/profilepic/noprofile.jpg\">";
-//			}
+			else {
+				echo "<img class=\"radius2 lvl\" src=\"img/profilepic/noprofile.jpg\">";
+			}
 			echo '<p>' . $naam . "</p></a></div>";
 		}
 	}	

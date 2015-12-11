@@ -18,7 +18,7 @@ $u=$_GET["u"];
 
 <div class="content">
 	<div class="projectlist skillslist2 shadow">
-		<div class="title radius"><img src="img/iSkill.png" height="30" /><p>Skills</p> 
+		<div class="title radius"><img src="img/iSkill.png" height="30" /><p>Skills wil leren LET OP WERKT NOG NIET</p> 
 			<div class="divisie">Selecteer vakgebied: &nbsp;
 				<select class="textbox" onchange="getSkills(this.value,<?php echo $_GET['u']; ?>)">
 					<option>-</option>
@@ -39,7 +39,7 @@ foreach ($data->results() as $rij) {
     <script>
 	function getSkills(divisie,user) {
        // alert ('hi');
-		skillsSearch(divisie,user);
+		skillswillerenSearch(divisie,user);
 	}
 </script>
 </body>

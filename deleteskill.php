@@ -1,10 +1,19 @@
 <?php
 require_once 'core/init.php';
+$user = new User();
+if (!$user->hasPermission('admin')) {
+		exit;
+	}
+if (!$user->isLoggedIn()) {
+    Redirect::to('login.php');
+}
+
+
 // $user = new User();
 // if (!$user->isLoggedIn()) {
 //     Redirect::to('login');
 // }
-$t=$_GET["t"];
+$t=$_GET["p"];
 //$user = Session::get(Config::get('session/session_name'));
 $user = $_GET["u"];
 
@@ -21,6 +30,6 @@ DB::getInstance()->query($sql);
 
 $sql = "DELETE FROM skills WHERE id='$t'";
 DB::getInstance()->query($sql);
-}
-Redirect::to('profile/' . echo Session::get(Config::get('session/session_name')));
+
+Redirect::to('admin-skills.php');
 ?>

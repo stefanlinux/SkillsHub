@@ -8,24 +8,27 @@ if (!$user->isLoggedIn()) {
     Redirect::to('login.php');
 }
 include("include/global_header.php");
-
-	include ("include/menu.php");
-	include ("fancybox.js");
+include ("include/menu.php");
+include ("fancybox.js");
 ?>
 
 <link rel="stylesheet" href="css/admin.css" type="text/css" media="screen" />
 <script type="text/javascript" src="js/skills.js"></script>
 <script type="text/javascript">
-	function ConfirmDelete(skillid,skillname) {
-		if (confirm("Weet je zeker dat je "+skillname+" wilt verwijderen?")) location.href=('deleteskill.php?v='+skillid);
+	function ConfirmDelete(skillid) {
+		if (confirm("Weet je zeker dat je "+skillid+" wilt verwijderen?")) {
+            //  location.href=('projecten.php');
+             //            location.href=('deleteskill.php?p='+skillid);
+             //            deleteskill.php?p=".$rij->id.
+        }
 	}
 	function getSkills(divisie) {
 		skillsSearch2(divisie);
 	}	  
 </script>
 </head>
-<body onLoad="getSkills('-')">
-
+<!-- <body onLoad="getSkills('-')"> -->
+<body>
 <div class="content">
 	<?php
 
@@ -61,10 +64,12 @@ foreach ($data->results() as $rij) {
 						$whitesmoke = 0;
 					}
 					echo "\">";
-					$naam = $rij->skill;
+					$naam = utf8_encode($rij->skill);
 					echo "<p>".$naam."</p>";
-					echo "<a href=\"skillbewerken.php?p=".$rij->id."\" class=\"edit\">Bewerken</a> ";
-					echo "<a onclick=\"ConfirmDelete(".$rij->id.",'".$naam."');\" href=\"#\" class=\"edit\">Verwijderen</a></div>";
+					echo "<a href=\"bewerken-skills.php?p=".$rij->id."\" class=\"edit\">Bewerken</a> ";
+                    			 echo "<a href=\"deleteskill.php?p=".$rij->id." \"class=\"edit\">Verwijderen</a></div>";
+                                 //	echo "<a onclick=\"ConfirmDelete(" . $rij->id . ");\" href=\"#\" class=\"edit\">Verwijderen</a></div>";
+
 				}
 			?>	
 			</div>

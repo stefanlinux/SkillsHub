@@ -14,7 +14,8 @@ include ("fancybox.js");
 <link rel="stylesheet" href="css/admin.css" type="text/css" media="screen" />
 <script type="text/javascript">
       function ConfirmDelete(opdrachtgeverid,opdrachtgevername) {
-            if (confirm("Weet je zeker dat je "+opdrachtgevername+" wilt verwijderen?\n\(inclusief bijhorende contactpersonen en projecten\)")) location.href=('deleteopdrachtgever.php?u='+opdrachtgevername);
+          if (confirm("Weet je zeker dat je "+opdrachtgevername+" wilt verwijderen?\n\(inclusief bijhorende contactpersonen en projecten\)"))
+              location.href=('deleteopdrachtgever.php?u='+opdrachtgevername);
       }
 </script>
 </head>

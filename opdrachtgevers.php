@@ -20,7 +20,7 @@ include("include/global_header.php");
 
 <div class="content">
 	<div class="opdrachten shadow">
-		<div class="title radius"><img src="img/iSkill.png" height="30" /><p>Markt</p></div>
+		<div class="title radius"><img src="img/iSkill.png" height="30" /><p>Opdrachtgevers</p></div>
 		<div class="content " id="opdrachtenresults">
 		<?php
         //			include ("include/clsDatabase.php");

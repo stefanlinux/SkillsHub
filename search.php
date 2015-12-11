@@ -112,7 +112,7 @@ if ($user->isLoggedIn()) {
 			<div class="projects" id="searchprojects">
 				<form>
 					<span>Selecteer een skill: </span>
-					<select class="textbox" name="skilloption2" id="skilloption2" onchange="searchprojects()">
+					<select class="textbox textboxsearch" name="skilloption2" id="skilloption2" onchange="searchprojects()">
 					<option value="-">-</option>
 					<?php 
 						$data = $rs->dataOpvragen("SELECT * FROM `skills`");

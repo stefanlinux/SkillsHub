@@ -8,22 +8,26 @@ if (!$user->isLoggedIn()) {
     Redirect::to('login.php');
 }
 include("include/global_header.php");
-
-	include ("include/menu.php");
-	include ("fancybox.js");	
+include ("include/menu.php");
+//include ("fancybox.js");	
 ?>
 <link rel="stylesheet" href="css/admin.css" type="text/css" media="screen" />
 <script type="text/javascript">
-	function ConfirmDelete(vakgebiedid,vakgebiedname) {
-		if (confirm("Weet je zeker dat je "+vakgebiedname+" wilt verwijderen?")) location.href=('deletevakgebied.php?v='+vakgebiedid);
+    function ConfirmDelete( vakgebiedid ) { 
+        if (confirm ("Weet je zeker dat je " + vakgebiedid + " wilt verwijderen?")) {
+            alert('okkkkk');
+            //            location.href = ( 'deletevakgebied.php?v='+vakgebiedid  );
+            Redirect::to('projecten.php');
+            //  location.href=('projecten.php');
+                    // location.href=('deletevakgebied.php?v='+vakgebiedid);
+        }
 	}
 </script>
 </head>
 <body>
 <div class="content">
 <?php
-
-	$whitesmoke = 1;
+$whitesmoke = 1;
 $sql = "SELECT * FROM `vakgebieden` ORDER BY `vakgebied`";
 $data = DB::getInstance()->query($sql);
 ?>
@@ -45,7 +49,8 @@ $data = DB::getInstance()->query($sql);
 					$naam = $rij->vakgebied;
 					echo "<p>".$naam."</p>";
 					echo "<a href=\"bewerken-vakgebied.php?p=".$rij->id."\" class=\"edit\">Bewerken</a> ";
-					echo "<a onclick=\"ConfirmDelete(".$rij->id.",'".$naam."');\" href=\"#\" class=\"edit\">Verwijderen</a></div>";
+                    //	echo "<a onclick=\"ConfirmDelete(" .$rij->id. ");\" href=\"#\" class=\"edit\">Verwijderen</a></div>";
+                    	echo "<a href=\"deletevakgebied.php?v=".$rij->id."\" class=\"edit\">Verwijderen</a></div>";
 				}
 			?>	
 			</div>

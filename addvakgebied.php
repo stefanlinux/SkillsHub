@@ -21,14 +21,15 @@ include ("fancybox.js");
 
 		$sql = "INSERT INTO vakgebieden (id , vakgebied) VALUES (NULL, '$_POST[vakgebied]')";
         DB::getInstance()->query($sql);
-		echo '<meta http-equiv="refresh" content="0"url="admin-vakgebieden">';
+        echo '<meta http-equiv="refresh" content="0;url=admin-vakgebieden.php">';
+        //	echo '<meta http-equiv="refresh" content="0"url="admin-vakgebieden">';
 	}
 	else {
 ?>
 	<div class="list editprofile shadow">
 		<div class="title radius">
 			<img src="img/icon_vakgebied.png" height="30" /><p>Vakgebied toevoegen</p>
-			<a href="deletevakgebieden.php" class="edit3">Vakgebied verwijderen</a>
+			<a href="admin-vakgebieden.php" class="edit3">Vakgebieden</a>
 		</div>
 		<div class="content">
 			<form id="frm" name="frm" method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
