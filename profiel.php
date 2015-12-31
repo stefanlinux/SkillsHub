@@ -212,7 +212,7 @@ echo "</div>";
 					}
 					 echo "\">" . $rij->skill; 
 		
-echo "<a class=\"deleteitem\" href=\"deleteuserskillssssss.php?t=" . $rij->skillid ."&u=".  $u. "\">x</a>";
+echo "<a class=\"deleteitem\" href=\"deleteskillwilleren.php?t=" . $rij->skillid ."&u=".  $u. "\">x</a>";
 echo "</div>";  
                      					
 				}

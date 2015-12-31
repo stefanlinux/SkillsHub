@@ -179,7 +179,7 @@ foreach($data->results() as $rij) {
 <?php 
 $sql = "SELECT skillsusers.id as id, skills.skill as skill, skillsusers.lvl as lvl FROM skillsusers, skills WHERE skillsusers.usersid=$u AND skillsusers.skill = skills.id";
 $data = DB::getInstance()->query($sql);
-//	if($data != "") {
+
 		foreach ($data->results() as $rij) {
 			echo "<div onclick=\"location.href='search.php?s=" . $rij->id . "';\" class=\"listitem lvl" . $rij->lvl;
             //			if($_SESSION["accounttype"] != 2) {
@@ -193,14 +193,13 @@ $data = DB::getInstance()->query($sql);
 			}
 			echo "</div>";
 		}
-        //	}
+       
 ?>
 				</div>
 					  	<?php
-//	if($_SESSION["accounttype"] == 2) {
-//if ($user->hasPermission('admin')) {
+
 				echo "<a href=\"skills.php?u=" . $u  . "\"><img src=\"img/icon_edit.png\"></a>";
-                //	}
+                
 		?>
 				<div class="title2"><h4>Contact</h4></div>
 				<div class="blocks">
@@ -209,11 +208,11 @@ $data = DB::getInstance()->query($sql);
 					<div class="label">linkedin:</div> <input type="text" id="linkedin" name="linkedin" class="textbox" value="<?php echo $linkedin; ?>" /><br/>
 					<div class="label">Site:</div> <input type="text" id="site" name="site" class="textbox" value="<?php echo $site; ?>" /><br/>
 				</div>
-				<div class="title2"><h4>Wachtwoord</h4></div>
-				<div class="blocks">
-				 <div class="label">Wachtwoord:</div> <input type="password" id="ww" name="password" class="textbox" value="" /><br/>
-            <div class="label">Wachtwoord opnieuw:</div> <input type="password" id="ww" name="password_again" class="textbox" value="" /><br/>
-				</div> 
+				<!-- <div class="title2"><h4>Wachtwoord</h4></div>
+				     <div class="blocks">
+				     <div class="label">Wachtwoord:</div> <input type="password" id="ww" name="password" class="textbox" value="" /><br/>
+                                     <div class="label">Wachtwoord opnieuw:</div> <input type="password" id="ww" name="password_again" class="textbox" value="" /><br/>
+				     </div>  -->
 				<input type="submit" name='submit'id="opslaan" class="button" value="Opslaan"> 
 			</form>
 		</div>

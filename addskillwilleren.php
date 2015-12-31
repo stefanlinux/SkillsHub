@@ -15,6 +15,6 @@ $sql = "INSERT INTO skillsuserswilleren (id, usersid, skill, lvl) VALUES (NULL, 
 
 $data = DB::GetInstance()->query($sql);
 ?>
-<meta http-equiv="refresh" content="0;url=skills.php?u=<?php echo $user; ?>">
+<meta http-equiv="refresh" content="0;url=skillswilleren.php?u=<?php echo $user; ?>">
 
 
